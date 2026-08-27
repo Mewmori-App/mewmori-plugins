@@ -1,0 +1,14 @@
+{
+  "name": "mewmori-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:registry": "node scripts/build-registry.mjs",
+    "check:registry": "node scripts/build-registry.mjs --check",
+    "test": "node scripts/validate.mjs && node scripts/build-registry.mjs --check"
+  }
+}

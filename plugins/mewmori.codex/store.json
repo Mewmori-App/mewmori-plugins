@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "description": "Receive privacy-limited Codex task lifecycle events through a local companion plugin.",
+  "author": {
+    "name": "Mewmori",
+    "github": "BarredEwe"
+  },
+  "license": "Apache-2.0",
+  "categories": ["developer-tools", "productivity"]
+}

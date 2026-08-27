@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "mewmori": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["./scripts/server.mjs"],
+      "cwd": ".",
+      "env_vars": ["HOME", "USERPROFILE", "LOCALAPPDATA"],
+      "startup_timeout_sec": 10,
+      "tool_timeout_sec": 10
+    }
+  }
+}

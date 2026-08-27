@@ -1,0 +1,19 @@
+{
+  "name": "mewmori-codex",
+  "version": "0.1.0",
+  "description": "Mewmori Codex plugin",
+  "author": {
+    "name": "Mewmori"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Mewmori Codex",
+    "shortDescription": "Report Codex task status to Mewmori.",
+    "longDescription": "Reports only a task title, lifecycle status, and short user-safe summary to the local Mewmori app. It never sends prompts, terminal output, diffs, file contents, or secrets.",
+    "developerName": "Mewmori",
+    "category": "Productivity",
+    "capabilities": ["MCP", "Automation"],
+    "defaultPrompt": "Report this task's lifecycle to Mewmori without including prompts, terminal output, diffs, file contents, or secrets."
+  },
+  "mcpServers": "./.mcp.json"
+}

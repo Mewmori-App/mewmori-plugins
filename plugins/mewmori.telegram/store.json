@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "description": "Connect one user-owned Telegram bot and one explicitly paired private chat to Mewmori.",
+  "author": {
+    "name": "Mewmori",
+    "github": "BarredEwe"
+  },
+  "license": "Apache-2.0",
+  "categories": ["communication"]
+}

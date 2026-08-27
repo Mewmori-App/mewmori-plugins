@@ -1,0 +1,33 @@
+name: Plugin request
+description: Suggest a service or workflow for a future Mewmori plugin.
+title: "[Plugin request]: "
+labels: [plugin-request]
+body:
+  - type: input
+    id: service
+    attributes:
+      label: Service or workflow
+      placeholder: "Example: Linear"
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: User value
+      description: What should the plugin help the user accomplish?
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data and actions
+      description: What data would it read, retain, or send? What actions would it perform?
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety acknowledgement
+      options:
+        - label: I understand that outbound or destructive actions must require explicit user confirmation.
+          required: true

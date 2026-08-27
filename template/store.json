@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "description": "Replace this text with a concise description of the user-visible value.",
+  "author": {
+    "name": "Your name",
+    "github": "your-github-handle"
+  },
+  "license": "Apache-2.0",
+  "categories": ["other"]
+}

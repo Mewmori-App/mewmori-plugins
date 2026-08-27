@@ -1,0 +1,17 @@
+{
+  "id": "mewmori.telegram",
+  "displayName": "Telegram",
+  "version": "0.1.0",
+  "apiVersion": 1,
+  "entrypoint": "dist/index.mjs",
+  "permissions": ["activities", "commands", "network", "secureStorage"],
+  "networkHosts": ["api.telegram.org"],
+  "settings": [
+    {
+      "key": "botToken",
+      "title": "Bot token",
+      "kind": "secret",
+      "required": true
+    }
+  ]
+}

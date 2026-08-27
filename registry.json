@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "plugins": [
+    {
+      "id": "mewmori.codex",
+      "displayName": "Codex",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Receive privacy-limited Codex task lifecycle events through a local companion plugin.",
+      "author": {
+        "name": "Mewmori",
+        "github": "BarredEwe"
+      },
+      "license": "Apache-2.0",
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "permissions": [
+        "activities"
+      ],
+      "networkHosts": [],
+      "path": "plugins/mewmori.codex"
+    },
+    {
+      "id": "mewmori.telegram",
+      "displayName": "Telegram",
+      "version": "0.1.0",
+      "apiVersion": 1,
+      "description": "Connect one user-owned Telegram bot and one explicitly paired private chat to Mewmori.",
+      "author": {
+        "name": "Mewmori",
+        "github": "BarredEwe"
+      },
+      "license": "Apache-2.0",
+      "categories": [
+        "communication"
+      ],
+      "permissions": [
+        "activities",
+        "commands",
+        "network",
+        "secureStorage"
+      ],
+      "networkHosts": [
+        "api.telegram.org"
+      ],
+      "path": "plugins/mewmori.telegram"
+    }
+  ]
+}
