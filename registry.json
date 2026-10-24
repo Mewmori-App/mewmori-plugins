@@ -25,12 +25,12 @@
     {
       "id": "mewmori.telegram",
       "displayName": "Telegram",
-      "version": "0.1.0",
+      "version": "0.3.0",
       "apiVersion": 1,
-      "description": "Connect one user-owned Telegram bot and one explicitly paired private chat to Mewmori.",
+      "description": "Text your own bot from your phone, and the cat passes the message on at your Mac.",
       "author": {
         "name": "Mewmori",
-        "github": "BarredEwe"
+        "github": "Mewmori-App"
       },
       "license": "Apache-2.0",
       "categories": [
@@ -38,14 +38,25 @@
       ],
       "permissions": [
         "activities",
-        "commands",
+        "notices",
         "network",
         "secureStorage"
       ],
       "networkHosts": [
         "api.telegram.org"
       ],
-      "path": "plugins/mewmori.telegram"
+      "path": "plugins/mewmori.telegram",
+      "pitch": {
+        "says": {
+          "ru": "Из телеграма: «Купи молоко по дороге»",
+          "en": "From Telegram: “Grab milk on the way”"
+        },
+        "when": {
+          "ru": "когда вы пишете своему боту с телефона",
+          "en": "when you text your bot from your phone"
+        },
+        "mood": "watching"
+      }
     }
   ]
 }

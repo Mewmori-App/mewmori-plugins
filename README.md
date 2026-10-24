@@ -11,7 +11,7 @@ This repository is where developers publish Mewmori plugins through pull request
 
 | Plugin | What it does | Network access |
 | --- | --- | --- |
-| [Telegram](plugins/mewmori.telegram) | Connects one user-owned Telegram bot and one explicitly paired private chat. | `api.telegram.org` |
+| [Telegram](plugins/mewmori.telegram) | Text your own bot from your phone, and the cat passes the message on at your Mac. | `api.telegram.org` |
 | [Codex](plugins/mewmori.codex) | Receives privacy-limited task lifecycle events from the companion Codex plugin. | None |
 
 The machine-readable catalog is available in [`registry.json`](registry.json).
@@ -20,13 +20,11 @@ The machine-readable catalog is available in [`registry.json`](registry.json).
 
 Plugin support is available in the direct-distribution build of Mewmori. It is intentionally excluded from the Mac App Store build.
 
-1. Download or clone this repository.
-2. Open **Assistant Center → Integrations** in Mewmori.
-3. Enable **Developer Mode**.
-4. Choose **Install from local folder** and select a directory under `plugins/`.
-5. Review the requested permissions and settings before enabling the connection.
+1. Open **Assistant Center → Skills → Catalog** in Mewmori.
+2. Pick a card, review what the plugin asks for, and press **Install**.
+3. Connect it. Mewmori pins the exact commit of this repository it showed you and installs that.
 
-Git installation requires a repository whose root is one plugin. The community catalog is a monorepo, so install catalog entries from a local checkout until native catalog installation lands in Mewmori.
+To try a plugin before it is in the catalog, use **Skills → For developers → Your plugin** and point it at a local folder or a Git URL with a full commit SHA. Such a plugin has not been reviewed, and Mewmori says so.
 
 ## Publish your plugin
 
@@ -53,7 +51,7 @@ plugins/example.weather/
 
 Mewmori starts the declared `.mjs` entrypoint as a managed Node.js process and communicates through newline-delimited JSON-RPC 2.0 over stdin/stdout. The current host API version is `1`.
 
-Supported permissions are `activities`, `commands`, `network`, and `secureStorage`. Secret settings are stored by Mewmori in Keychain. A manifest declaration makes access reviewable; it does not enforce an OS sandbox.
+Supported permissions are `activities`, `commands`, `notices`, `network`, and `secureStorage`. Secret settings are stored by Mewmori in Keychain. A manifest declaration makes access reviewable; it does not enforce an OS sandbox.
 
 ## License
 

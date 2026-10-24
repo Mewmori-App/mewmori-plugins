@@ -16,6 +16,7 @@ for (const directory of await pluginDirectories()) {
     permissions: manifest.permissions,
     networkHosts: manifest.networkHosts,
     path: `plugins/${directory}`,
+    ...(store.pitch ? { pitch: store.pitch } : {}),
   });
 }
 

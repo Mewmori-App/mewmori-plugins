@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/BarredEwe/mewmori-plugins/main/schema/mewmori-plugin.schema.json",
+  "$id": "https://raw.githubusercontent.com/Mewmori-App/mewmori-plugins/main/schema/mewmori-plugin.schema.json",
   "title": "Mewmori Plugin Manifest",
   "type": "object",
   "additionalProperties": false,
@@ -14,7 +14,7 @@
     "permissions": {
       "type": "array",
       "uniqueItems": true,
-      "items": { "enum": ["activities", "commands", "network", "secureStorage"] }
+      "items": { "enum": ["activities", "commands", "notices", "network", "secureStorage"] }
     },
     "networkHosts": {
       "type": "array",
