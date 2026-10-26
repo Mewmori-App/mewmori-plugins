@@ -48,6 +48,7 @@ Declare only permissions you use:
 
 - `activities`: emit user-visible activity records to Mewmori;
 - `commands`: receive a user-approved command from Mewmori;
+- `notices`: ask the cat to say something, and ask it to keep quiet (see below);
 - `network`: make network requests; every destination hostname must be listed in `networkHosts`;
 - `secureStorage`: receive settings marked as `secret` through the host.
 
@@ -64,6 +65,34 @@ Emit activities as notifications:
 ```
 
 Supported activity kinds are `message`, `status`, `taskStarted`, `taskCompleted`, `taskFailed`, and `error`. Treat all remote input as untrusted data. Do not copy remote input into process logs or error messages.
+
+With the `notices` permission a plugin can ask the cat to react. It states a fact and its urgency; the cat's planner decides whether and when to say it, alongside everything else the cat does:
+
+```json
+{"jsonrpc":"2.0","method":"notice","params":{"key":"build","urgency":"attention","mood":"watching","phrases":["The build failed"],"expiresInSeconds":600}}
+```
+
+`urgency` is `ambient`, `attention` or `urgent`; `mood` is one of `watching`, `thinking`, `adoring`, `stretching`, `grooming`. One pending notice per `key`: a newer one replaces an older one. Text is flattened to one line and trimmed. The same permission lets a plugin ask the cat to keep quiet while the person is busy, up to eight hours; `0` lifts the request:
+
+```json
+{"jsonrpc":"2.0","method":"quiet","params":{"seconds":1800}}
+```
+
+A plugin that needs the person to do something before it works (create an account, paste a key, scan a code) sends numbered `setup` steps with optional `url`, `copy` and `qr`, and an empty list once it is done. See the Telegram plugin for a complete example.
+
+## The catalog card
+
+A plugin with the `notices` permission can add a `pitch` to `store.json`: an example of what the cat will say, and when. The catalog card starts with it, and the cat says it right after the person connects the plugin.
+
+```json
+"pitch": {
+  "says": { "en": "From Telegram: “Grab milk on the way”", "ru": "Из телеграма: «Купи молоко по дороге»" },
+  "when": { "en": "when you text your bot from your phone", "ru": "когда вы пишете своему боту с телефона" },
+  "mood": "watching"
+}
+```
+
+Every line needs an English version, one line each, up to 160 characters. Describe what the cat does, not what the service is: the person is choosing a behaviour for their cat.
 
 ## Pull request checklist
 
